@@ -22,7 +22,7 @@ mvn spring-boot:run
 The application will start on http://localhost:8080.
 
 
-
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
 2. Running the Machine Test
 
 The project includes APIs for both Category and Product CRUD operations, with a one-to-many relationship between Category and Product.
@@ -62,7 +62,7 @@ Update product by ID: PUT http://localhost:8080/api/products/{id}
 Delete product by ID: DELETE http://localhost:8080/api/products/{id}
 
 
-
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
 3. Database Design
    
 I used MySQL as the relational database.
