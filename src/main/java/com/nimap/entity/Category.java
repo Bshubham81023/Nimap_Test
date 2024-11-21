@@ -1,8 +1,9 @@
 package com.nimap.entity;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -12,26 +13,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table
+
 public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int c_id;
-	public String c_name;
+	private Integer c_id;
+	private String c_name;
 
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonBackReference
 	private List<Product> product = new ArrayList<>();
 
-	public int getC_id() {
+	public Integer getC_id() {
 		return c_id;
 	}
 
-	public void setC_id(int c_id) {
+	public void setC_id(Integer c_id) {
 		this.c_id = c_id;
 	}
 
@@ -50,7 +51,5 @@ public class Category {
 	public void setProduct(List<Product> product) {
 		this.product = product;
 	}
-	
-	
 
 }
